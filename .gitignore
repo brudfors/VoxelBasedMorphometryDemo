@@ -1,0 +1,6 @@
+*.mexa64
+*.mexw64
+*.asv
+*.m~
+*.mat
+*.md~
