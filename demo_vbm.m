@@ -6,10 +6,10 @@
 clear; clc;
 
 % Parameters
-N0 = Inf;                     % Inf uses all images
+N0      = Inf;                % Inf uses all images
 dir_t1w = '/pth/to/niis';     % data directory (N0 niftis in this directory will be selected)
 dir_res = '/pth/to/results';  % results directory
-fwhm = 10;                    % amount of smoothing
+fwhm    = 10;                 % amount of smoothing
 
 % Age and sex are covariates, as we here do not have these values, we just 
 % pick some random numbers. When specifying them, ensure that they are in
