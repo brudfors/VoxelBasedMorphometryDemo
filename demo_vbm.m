@@ -7,7 +7,7 @@ clear; clc;
 
 % Parameters
 N0      = Inf;                % Inf uses all images
-dir_t1w = '/pth/to/niis';     % data directory (N0 niftis in this directory will be selected)
+dir_img = '/pth/to/niis';     % data directory (N0 niftis in this directory will be selected)
 dir_res = '/pth/to/results';  % results directory
 fwhm    = 10;                 % amount of smoothing
 
@@ -21,7 +21,7 @@ age = rand(N0,1);
 % Normalises+segments the input images, which will be written prefixed 
 % mwc[1-3]* (modulated warped GM, WM and CSF) in the same folder as the 
 % input images.
-files = spm_select('FPList',dir_t1w,'^.*\.nii$');
+files = spm_select('FPList',dir_img,'^.*\.nii$');
 files = files(1:min(N0,size(files,1)),:);
 N     = size(files,1);
 
