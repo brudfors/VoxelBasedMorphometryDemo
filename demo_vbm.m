@@ -14,8 +14,8 @@ fwhm = 10;                    % amount of smoothing
 % Age and sex are covariates, as we here do not have these values, we just 
 % pick some random numbers. When specifying them, ensure that they are in
 % the same order as the input files read on line 24.
-sex = rand(N,1);
-age = rand(N,1);
+sex = rand(N0,1);
+age = rand(N0,1);
 
 %% 1. Unified segmentation
 % Normalises+segments the input images, which will be written prefixed 
@@ -24,6 +24,10 @@ age = rand(N,1);
 files = spm_select('FPList',dir_t1w,'^.*\.nii$');
 files = files(1:min(N0,size(files,1)),:);
 N     = size(files,1);
+
+% Ensure correct number of covariates
+sex = sex(1:N);
+age = age(1:N);
 
 matlabbatch = {};
 matlabbatch{1}.spm.spatial.preproc.channel.vols = cellstr(files);
